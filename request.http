@@ -1,4 +1,38 @@
-### test
-GET http://localhost:3000/
+@baseUrl = http://localhost:3000
 
+### test
+GET {{baseUrl}}
+
+### 📚 Get all books
+GET {{baseUrl}}/books
+
+
+###  Get one book by ID
+GET {{baseUrl}}/books/1
+
+
+###  Get all genres
+GET {{baseUrl}}/genres
+
+### Get one genre by ID 
+GET {{baseUrl}}/genres/2
+
+###  Create a new genre
+POST {{baseUrl}}/genres
+Content-Type: application/json
+
+{
+  "name": "fiction"
+}
+
+###  Update a genre
+PUT {{baseUrl}}/genres/12
+Content-Type: application/json
+
+{
+  "name": "Thriller"
+}
+
+###  Delete a genre
+DELETE {{baseUrl}}/genres/12
 
