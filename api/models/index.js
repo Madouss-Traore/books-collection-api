@@ -1,6 +1,6 @@
-import  Book  from "./book.js";
-import  Genre from "./genre.js";
-import  BookGenre  from "./bookGenre.js";
+import  {Book}  from "./book.js";
+import  {Genre} from "./genre.js";
+import  {BookGenre}  from "./bookGenre.js";
 import { sequelize } from "./sequelize.client.js";
 
 Book.belongsToMany(Genre, {

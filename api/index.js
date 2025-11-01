@@ -1,11 +1,15 @@
 import "dotenv/config";
 import express from "express";
 import { sequelize } from "./models/sequelize.client.js";
+import { router as bookRouter } from "./routers/book.router.js";
+
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use("/books", bookRouter);
+
 
 
 app.get("/", (_req, res) => {
