@@ -1,15 +1,18 @@
-
-// models/sequelize.client.js
 import "dotenv/config";
 import { Sequelize } from "sequelize";
 
-export const sequelize = new Sequelize(process.env.PG_URL, {
-  define: {
-    createdAt: "created_at",
-    updatedAt: "updated_at"
-  },
-  logging: false
-});
+export const sequelize = new Sequelize(
+  process.env.PG_URL, 
+  {
+    logging: false,
+    define: {
+      timestamps: true,
+      underscored: true,
+      createdAt: "created_at",
+      updatedAt: "updated_at"
+    }
+  }
+);
 
 try {
   await sequelize.authenticate();
