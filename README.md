@@ -1,51 +1,59 @@
-# Books Collection API  (Projet personnel d’apprentissage)
+# 📘 Books Collection API
 
+API REST construite avec **Node.js**, **Express** et **Sequelize**, permettant de gérer une collection de **livres** et leurs **genres** dans une relation **Many-to-Many (N↔N)**.
 
-Ce projet est une **API REST** développée avec **Node.js**, **Express** et **Sequelize**.  
-Elle permet de gérer une collection de **livres** et leurs **genres** (relation N↔N).  
-Les routes permettent de **consulter**, **ajouter** et **supprimer** des éléments, avec une structure claire et évolutive.
+Elle offre des routes pour consulter, ajouter, modifier et supprimer des livres et des genres, avec une architecture claire et évolutive.
 
 ---
 
-## 🚀 Démarrer le projet
+# 🚀 Démarrer le projet
 
-###  Installation
+## 1️⃣ Installation
 
-Clonez le dépôt et installez les dépendances :
+Clonez le dépôt puis installez les dépendances :
 
-git clone git@github.com:<votre-utilisateur>/<votre-repo>.git
-cd books-collection-api
+```bash
+git clone git@github.com:Madouss-Traore/books-collection-api.git
+cd books-collection-api/api
 npm install
-
-
+```
 
 ###  Configuration
 
-Créez un fichier `.env` à la racine du projet en vous basant sur `.env.example` :
+Créez un fichier `.env` dans le dossier /api en vous basant sur `.env.example` :
 
+```env
 PORT=3000
-PG_URL=postgres://<user>:<password>@localhost:5432/books
 
+DB_NAME=books
+DB_USER=madtae
+DB_PASSWORD=ton_mot_de_passe
+DB_HOST=localhost
+DB_DIALECT=postgres
+```
 
 
 ###  Base de données
 
 Initialisez la base avec les scripts SQL fournis :
 
+```bash
 npm run db:create
 npm run db:seed
-
+```
 
 
 Ou directement :
 
+```bash
 npm run db:reset
-
+```
 
 ###  Lancer le serveur
 
+```bash
 npm run dev
-
+```
 
 
 Le serveur démarre sur `http://localhost:3000`
@@ -85,7 +93,7 @@ Un message de confirmation s’affichera dans la console :
 | Commande          | Description                   |
 |-------------------|-------------------------------|
 | npm start         | Lance le serveur en production |
-| npm run dev       | Lance le serveur avec nodemon  |
+| npm run dev       | Lance le serveur en mode développement  |
 | npm run db:create | Crée les tables via SQL        |
 | npm run db:seed   | Ajoute les données initiales   |
 | npm run db:reset  | Réinitialise la base (create + seed) |
